@@ -18,4 +18,4 @@ Andrés Velasco
 
 ## Estado
 
-En desarrollod
+En desarrollo
