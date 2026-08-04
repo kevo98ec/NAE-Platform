@@ -1,17 +1,4 @@
-/* export default function Hero() {
-  return (
-    <section>
-        <p className="mt-6 text-gray-600 leading-8">
-            Encuentra el par que siempre soñaste.
-            Productos 100% originales.                             │
-            Stock y bajo pedido.                                   │
-            Si el modelo existe, nosotros te ayudamos              │
-            a conseguirlo.  
-        </p>
 
-    </section>
-  );
-} */
 
 import PrimaryButton from "./PrimaryButton";
 
