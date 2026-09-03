@@ -2,8 +2,11 @@ type FilterGroupProps = {
     title: string;
     items: readonly string[];
     type: "button" | "checkbox";
-    selected: string | null;
+    selected: string | null | readonly string[];
     onSelect: (item: string) => void;
+    
+    
+
 };
 
 export default function FilterGroup({
@@ -33,7 +36,11 @@ export default function FilterGroup({
                                 <input
                                     type="checkbox"
                                     value={item}
-                                    checked={selected === item}
+                                    checked={
+                                        Array.isArray(selected)
+                                            ? selected.includes(item)
+                                            : selected === item
+                                    }
                                     onChange={() => onSelect(item)}
                                 />
 

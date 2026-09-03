@@ -1,7 +1,7 @@
 export const SIZES =[
-    "7",
-    "7.5",
-    "8",
-    "8.5",
-    "9"
+    "US 7",
+    "US 7.5",
+    "US 8",
+    "US 8.5",
+    "US 9"
 ] as const;

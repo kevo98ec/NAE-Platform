@@ -17,15 +17,19 @@ export default function ProductCard({
             <div className="p-5">
                            
                 <p
-                className={
-                    product.status === "En Stock"
-                    ? "text-green-600 font-semibold"
-                    : "text-yellow-600 font-semibold"
-                }
-                >             
-                {product.status === "En Stock"
-                    ? "🟢 En Stock"
-                    : "🟡 Bajo pedido"}
+                    className={
+                        product.status === "En Stock"
+                            ? "text-green-600 font-semibold"
+                            : product.status === "Agotado"
+                                ? "text-red-600 font-semibold"
+                                : "text-yellow-600 font-semibold"
+                    }
+                >
+                    {product.status === "En Stock"
+                        ? "🟢 En Stock"
+                        : product.status === "Agotado"
+                            ? "🔴 Agotado"
+                            : "🟡 Bajo pedido"}
                 </p>
                             
                 <h2 className="text-xl font-bold">{product.name}</h2>

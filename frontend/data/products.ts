@@ -12,8 +12,8 @@ const products: Product[] = [
     isNew: true,
     featured: false,
     price: 235,
-    size: "US 9",
-    status: "En Stock",
+    size: "US 7",
+    status: "Agotado",
   },
 
   {
@@ -26,7 +26,7 @@ const products: Product[] = [
     featured: false,
     price: 250,
     size: "US 8",
-    status: "Bajo pedido",
+    status: "Agotado",
   },
     {
     id: 3,
@@ -109,14 +109,14 @@ const products: Product[] = [
     id: 9,
     image: "/mercurial3.jpg",
     name: "mercurial Elite FG",
-    category:PRODUCT_CATEGORIES.SNEAKERS,
+    category:PRODUCT_CATEGORIES.RUNNING,
     brand: "Nike",
     isNew: false,
     featured: true,
     price: 235,
     size: "US 9",
     status: "En Stock",
-    
+
 
   },
 
