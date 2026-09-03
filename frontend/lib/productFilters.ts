@@ -1,12 +1,9 @@
-import {Product} from "../types/product"
-import { PRODUCT_CATEGORIES } from "../constants/productCategories";
+import { Product } from "../types/product";
 
-export function getNewProducts (products:Product[]){
+export function getNewProducts(products: Product[]) {
     return products.filter(
-        (product)=> product.isNew
-
+        (product) => product.isNew
     );
-
 }
 
 export function getProductsByCategory(
@@ -24,6 +21,14 @@ export function getProductsByCategory(
         }
 
         return product.category === category;
-
     });
+}
+
+export function getProductsByBrand(
+    products: Product[],
+    brand: string
+) {
+    return products.filter(
+        (product) => product.brand === brand
+    );
 }

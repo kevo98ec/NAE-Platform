@@ -5,6 +5,7 @@ export type Product = {
   image: string;
   name: string;
   category: ProductCategory;
+  brand: string;
   isNew: boolean;
   featured: boolean;
   price: number;

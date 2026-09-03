@@ -2,7 +2,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ProductSection from "../components/ProductSection";
-import { getAllProducts } from "../services/productService";
 
 import {
     getNewLaunches,
