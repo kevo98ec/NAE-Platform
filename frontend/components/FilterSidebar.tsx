@@ -11,7 +11,7 @@ type FilterSidebarProps = {
 
     selectedCategory: string | null;
     onCategoryChange: (category: string | null) => void;
-    
+
     selectedStatus: string | null;
     onStatusChange: (status: string | null) => void;
 
@@ -32,17 +32,21 @@ export default function FilterSidebar({
     selectedSizes,
     onSizeChange,
 }: FilterSidebarProps) {
-
     return (
-        <aside className="w-64 shrink-0 bg-white p-4">
+        <aside className="w-full lg:w-64 shrink-0 bg-white rounded-2xl p-5 shadow-sm">
+            <div className="flex items-center justify-between mb-5">
+                <h2 className="text-xl font-bold text-slate-900">
+                    Filtros
+                </h2>
 
-            <h2>Filtros</h2>
-            <button
-                type="button"
-                onClick={onClearFilters}
-            >
-                🧹 Limpiar filtros
-            </button>
+                <button
+                    type="button"
+                    onClick={onClearFilters}
+                    className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                >
+                    Limpiar
+                </button>
+            </div>
 
             <FilterGroup
                 title="Categoría"
@@ -77,7 +81,7 @@ export default function FilterSidebar({
                 items={STATUS}
                 type="button"
                 selected={selectedStatus}
-               onSelect={(status) => {
+                onSelect={(status) => {
                     if (selectedStatus === status) {
                         onStatusChange(null);
                     } else {
@@ -93,7 +97,6 @@ export default function FilterSidebar({
                 selected={selectedSizes}
                 onSelect={onSizeChange}
             />
-
         </aside>
     );
 }

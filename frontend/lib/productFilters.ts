@@ -69,3 +69,46 @@ export function filterProducts(
         return true;
     });
 }
+
+export type ProductSort =
+    | "newest"
+    | "price-asc"
+    | "price-desc";
+
+
+    
+export function sortProducts(
+    products: Product[],
+    sort: ProductSort
+) {
+    return [...products].sort((a, b) => {
+        if (sort === "newest") {
+            return Number(b.isNew) - Number(a.isNew);
+        }
+
+        if (sort === "price-asc") {
+            return a.price - b.price;
+        }
+
+        if (sort === "price-desc") {
+            return b.price - a.price;
+        }
+
+        return 0;
+    });
+}
+
+export function searchProducts(
+    products: Product[],
+    search: string
+) {
+    const normalizedSearch = search.trim().toLowerCase();
+
+    if (!normalizedSearch) {
+        return products;
+    }
+
+    return products.filter((product) =>
+        product.name.toLowerCase().includes(normalizedSearch)
+    );
+}

@@ -1,30 +1,56 @@
+"use client";
 
-import PrimaryButton from "../components/PrimaryButton";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export default function Navbar(){
-    return(
+import SearchBar from "./SearchBar";
 
-        <nav className="bg-gray-800 p-4">
-            <div className="flex items-center">
-                <div className="text-white text-lg font-semibold">
-                    🌊 LAKE STORE
+export default function Navbar() {
+    const router = useRouter();
+
+    const handleSearch = (search: string) => {
+        const normalizedSearch = search.trim();
+
+        if (!normalizedSearch) {
+            router.push("/catalogo");
+            return;
+        }
+
+        router.push(
+            `/catalogo?search=${encodeURIComponent(normalizedSearch)}`
+        );
+    };
+
+    return (
+        <nav className="bg-white shadow-sm">
+            <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-6">
+
+                <Link
+                    href="/"
+                    className="text-2xl font-bold text-slate-900"
+                >
+                    🌊 Lake Store
+                </Link>
+
+                <SearchBar onSearch={handleSearch} />
+
+                <div className="flex items-center gap-6">
+                    <Link
+                        href="/"
+                        className="text-sm font-medium text-slate-600 hover:text-blue-600"
+                    >
+                        Inicio
+                    </Link>
+
+                    <Link
+                        href="/catalogo"
+                        className="text-sm font-medium text-slate-600 hover:text-blue-600"
+                    >
+                        Catálogo
+                    </Link>
                 </div>
-                <div className="space-x-4">
-                    <a href="#" className="text-gray-300 hover:text-white">Inicio</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Catálogo</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Fútbol</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Running</a>
-                    <a href="#" className="text-gray-300 hover:text-white">Lifestyle</a>
-                </div>
-                
-                <div className="mt-10 flex justify-center gap-4">
 
-                    <PrimaryButton text="Buscar un modelo"/>
-
-                </div>
             </div>
         </nav>
-
-    )
-
+    );
 }

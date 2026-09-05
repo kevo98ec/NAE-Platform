@@ -29,7 +29,7 @@ export default function ProductCard({
                         ? "🟢 En Stock"
                         : product.status === "Agotado"
                             ? "🔴 Agotado"
-                            : "🟡 Bajo pedido"}
+                            : "🟡 Bajo Pedido"}
                 </p>
                             
                 <h2 className="text-xl font-bold">{product.name}</h2>

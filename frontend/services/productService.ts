@@ -1,14 +1,18 @@
 import products from "../data/products";
+import type { Product } from "../types/product";
 
 import {
     getNewProducts,
     getProductsByCategory,
     getProductsByBrand,
     filterProducts,
+    sortProducts,
+    searchProducts,
+    
 } from "../lib/productFilters";
 
 import { PRODUCT_CATEGORIES } from "../constants/productCategories";
-
+import type { ProductSort } from "../lib/productFilters";
 export function getAllProducts() {
 
     return products;
@@ -41,17 +45,33 @@ export function getProductsByBrandFilter(brand: string) {
 
 }
 
+export function searchProductsByName(search: string) {
+    return searchProducts(products, search);
+}
+
 export function getProductsByCategoryFilter(category: string) {
 
     return getProductsByCategory(products, category);
 
 }
 
-export function getFilteredProducts(filters: {
-    brand?: string;
-    category?: string;
-    status?: string;
-    sizes?: string[];
-}) {
-    return filterProducts(products, filters);
+export function getFilteredProducts(
+    productsToFilter: Product[],
+    filters: {
+        brand?: string;
+        category?: string;
+        status?: string;
+        sizes?: string[];
+    }
+) {
+    return filterProducts(productsToFilter, filters);
 }
+
+
+export function getSortedProducts(
+    productsToSort: Product[],
+    sort: ProductSort
+) {
+    return sortProducts(productsToSort, sort);
+}
+

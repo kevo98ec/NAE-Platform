@@ -1,5 +1,5 @@
 export const STATUS =[
     "En Stock",
     "Agotado",
-    "Bajo pedido",
+    "Bajo Pedido",
 ] as const;
