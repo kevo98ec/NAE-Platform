@@ -6,6 +6,7 @@ type ProductCardProps = {
     product: Product;
 };
 
+
 export default function ProductCard({
     product,
 }: ProductCardProps) {

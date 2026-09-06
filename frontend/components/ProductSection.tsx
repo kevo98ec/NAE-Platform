@@ -17,7 +17,7 @@ export default function ProductSection({
     products,
 }: ProductSectionProps) {
 
-    console.log("Products:", products);
+    
     return (
     <section className="container mx-auto py-20">
         <h2 className="text-4xl font-bold text-center mb-12">
