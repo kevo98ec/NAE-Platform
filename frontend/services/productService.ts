@@ -22,6 +22,24 @@ export function getProductById(id: number) {
     return products.find((product) => product.id === id);
 }
 
+export function getRelatedProducts(
+    productId: number,
+    limit: number = 3
+) {
+    const currentProduct = getProductById(productId);
+
+    if (!currentProduct) {
+        return [];
+    }
+
+    return getProductsByCategory(
+        products,
+        currentProduct.category
+    )
+        .filter((product) => product.id !== productId)
+        .slice(0, limit);
+}
+
 export function getNewLaunches() {
 
     return getNewProducts(products);
