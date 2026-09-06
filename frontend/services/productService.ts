@@ -18,6 +18,9 @@ export function getAllProducts() {
     return products;
 
 }
+export function getProductById(id: number) {
+    return products.find((product) => product.id === id);
+}
 
 export function getNewLaunches() {
 

@@ -2,7 +2,8 @@ import {ProductCategory} from "../constants/productCategories";
 
 export type Product = {
   id: number;
-  image: string;
+  images: string[];
+  video?: string;
   name: string;
   category: ProductCategory;
   brand: string;
@@ -11,6 +12,12 @@ export type Product = {
   price: number;
   size: string;
   status: string;
+  description?: string;
+  
+  specifications?: {
+    label: string;
+    value: string;
+  }[];
 };
 
   
